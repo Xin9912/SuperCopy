@@ -15,7 +15,7 @@ INT8 file_Process(FILE_OPT_S* read,FILE_OPT_S* write)
         return -1;
     }
 
-    if(NULL == (data = (FILE_DATA_S *)calloc(1,sizeof(FILE_DATA_S) + BLKSIZE + 1)))
+    if(NULL == (data = (FILE_DATA_S *)calloc(1,sizeof(FILE_DATA_S) + BLKSIZE + 1)))	/*		+1是为了储存\n转换\r\n可能丢失的\n		*/
     {
         perror("Fail to calloc data!!!\n");
         return -1;
@@ -138,7 +138,7 @@ static INT16 file_Read(FILE_OPT_S* opt)
 
     if(opt->mode == ASCII)
     {
-        if(temp[BLKSIZE] == '\n')
+        if(temp[BLKSIZE] == '\n')	/*		处理上个包是否会有\n残留		*/
         {
             temp[BLKSIZE] = 0;
             *temp = '\n';

@@ -5,7 +5,7 @@ int main(int argc,char* argv[])
     FILE_OPT_S *read,*write = NULL;
     int val = 0;
 
-    if(argc < 3)
+    if(argc < 4)
     {
         goto param_error;
         exit(1);
@@ -23,7 +23,7 @@ int main(int argc,char* argv[])
         exit(1);
     }
     
-    if((val = check_File(argv[1],argv[2])) != 0)
+    if((val = check_File(argv[1],argv[2])) != 0)	/*		检查文件		*/
     {
         if(val == -1)
             goto fail;
@@ -40,7 +40,7 @@ int main(int argc,char* argv[])
     read->filename = argv[1];
     write->filename = argv[2];
 
-    val = file_Process(read,write);
+    val = file_Process(read,write);		/*		实现功能函数		*/
 
     if(val == -1)
         goto fail;
