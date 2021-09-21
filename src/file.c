@@ -48,12 +48,12 @@ int main(int argc,char* argv[])
         return 0;
 
 param_error:
-    printf("Usage: ./spcp srcfile dstfile [-t/o][t/o] [-f]\n");
-    printf("       srcfile：source filename\n");
-    printf("       dstfile：destination filename\n");
-    printf("       [-t/o]:  the mode you will read the source file. -t is for ASCII while -o is for OCTET. -o is default\n");
-    printf("       [t/o]:  the mode you will write the destination file. -t is for ASCII while -o is for OCTET. o is default\n");
-    printf("       [-f]: will overwrite the existing destination file\n");
+    printf("Usage: ./spcp srcfile dstfile -t/o[t/o] [-f]\n");
+    printf("       srcfile        source filename\n");
+    printf("       dstfile        destination filename\n");
+    printf("       -t/o           the mode you will read the source file. -t is for ASCII while -o is for OCTET.\n");
+    printf("       [t/o]          the mode you will write the destination file. -t is for ASCII while -o is for OCTET. o is default\n");
+    printf("       [-f]           will overwrite the existing destination file\n");
     printf("   eg: ./spcp file.c file1.c -tt [-f]\n");
     return -1;
 
