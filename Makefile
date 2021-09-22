@@ -30,4 +30,4 @@ $(OBJDIR):
 
 .PHONY:clean
 clean:
-	rm $(OBJS) $(OUTFILE)
+	rm OBJDIR OUTDIR -r
